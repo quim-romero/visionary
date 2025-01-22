@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
+import FeaturedWorks from "../components/FeaturedWorks";
 
 export default function Home() {
   return (
@@ -26,6 +27,8 @@ export default function Home() {
           Explore featured pieces from our visionary artists.
         </p>
       </div>
+
+      <FeaturedWorks />
     </motion.main>
   );
 }
