@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home"
 
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
@@ -9,7 +10,7 @@ export default function App() {
       <Navbar />
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/gallery" element={<h1>Gallery</h1>} />
         <Route path="/favorites" element={<h1>Favorites</h1>} />
         <Route path="/about" element={<h1>About</h1>} />
