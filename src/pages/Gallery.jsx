@@ -2,13 +2,18 @@ import { useEffect, useState } from "react";
 import artworks from "../data/artworks.json";
 import { Helmet } from "react-helmet";
 import GalleryCard from "../components/GalleryCard";
+import LightboxModal from "../components/LightboxModal";
 
 export default function Gallery() {
   const [data, setData] = useState([]);
+  const [selected, setSelected] = useState(null);
 
   useEffect(() => {
     setData(artworks);
   }, []);
+
+  const handleOpen = (art) => setSelected(art);
+  const handleClose = () => setSelected(null);
 
   return (
     <main className="min-h-screen px-4 py-24 max-w-7xl mx-auto">
@@ -18,9 +23,12 @@ export default function Gallery() {
       <h1 className="text-3xl font-display mb-8 text-center">Digital Works</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {data.map((art) => (
-          <GalleryCard key={art.id} artwork={art} />
+          <div key={art.id} onClick={() => handleOpen(art)}>
+            <GalleryCard artwork={art} />
+          </div>
         ))}
       </div>
+      <LightboxModal artwork={selected} onClose={handleClose} />
     </main>
   );
 }
