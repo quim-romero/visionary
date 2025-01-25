@@ -5,6 +5,7 @@ import Favorites from "./pages/Favorites"
 
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/contact" element={<h1>Contact</h1>} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
+      <Footer />
     </>
   );
 }
