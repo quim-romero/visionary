@@ -1,12 +1,13 @@
 import { FiHeart, FiCheck } from "react-icons/fi";
 import useFavoritesStore from "../context/useFavoritesStore";
+import { motion } from "framer-motion";
 
 export default function GalleryCard({ artwork }) {
   const { toggleFavorite, isFavorite } = useFavoritesStore();
   const fav = isFavorite(artwork.id);
 
   return (
-    <div className="relative bg-white dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+    <motion.div className="relative bg-white dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
       <button
         onClick={(e) => {
           e.stopPropagation();
@@ -24,6 +25,6 @@ export default function GalleryCard({ artwork }) {
       <img src={artwork.image} alt={artwork.title} className="rounded mb-2" />
       <h2 className="text-lg font-semibold">{artwork.title}</h2>
       <p className="text-sm text-neutral-500">{artwork.artist}</p>
-    </div>
+    </motion.div>
   );
 }
