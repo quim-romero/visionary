@@ -22,7 +22,12 @@ export default function GalleryCard({ artwork }) {
         )}
       </button>
 
-      <img src={artwork.image} alt={artwork.title} className="rounded mb-2" />
+      <img
+        src={artwork.image}
+        alt={artwork.title}
+        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+
       <h2 className="text-lg font-semibold">{artwork.title}</h2>
       <p className="text-sm text-neutral-500">{artwork.artist}</p>
     </motion.div>
