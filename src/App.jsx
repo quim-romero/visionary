@@ -7,6 +7,7 @@ import About from "./pages/About"
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"
+import Contact from "./pages/Contact"
 
 export default function App() {
   return (
@@ -18,7 +19,7 @@ export default function App() {
         <Route path="/gallery" element={<Gallery/>} />
         <Route path="/favorites" element={<Favorites/>} />
         <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<h1>Contact</h1>} />
+        <Route path="/contact" element={<Contact/>} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
       <Footer />
