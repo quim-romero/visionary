@@ -1,5 +1,5 @@
-import { Helmet } from "react-helmet"
-import { motion } from "framer-motion"
+import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
@@ -20,8 +20,8 @@ export default function Contact() {
         <form
           className="space-y-6"
           onSubmit={(e) => {
-            e.preventDefault()
-            alert("Message sent successfully.")
+            e.preventDefault();
+            alert("Message sent successfully.");
           }}
           aria-label="Contact form"
         >
@@ -34,7 +34,7 @@ export default function Contact() {
               id="name"
               name="name"
               required
-              className="w-full border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 rounded px-4 py-2 text-sm"
+              className="w-full border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
               aria-required="true"
             />
           </div>
@@ -48,7 +48,7 @@ export default function Contact() {
               id="email"
               name="email"
               required
-              className="w-full border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 rounded px-4 py-2 text-sm"
+              className="w-full border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
               aria-required="true"
             />
           </div>
@@ -62,19 +62,19 @@ export default function Contact() {
               name="message"
               rows="5"
               required
-              className="w-full border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 rounded px-4 py-2 text-sm resize-none"
+              className="w-full border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 rounded px-4 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
               aria-required="true"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-black text-white dark:bg-white dark:text-black rounded font-medium hover:opacity-90"
+            className="w-full py-2 px-4 bg-black text-white dark:bg-white dark:text-black rounded font-medium hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
           >
             Send Message
           </button>
         </form>
       </motion.main>
     </>
-  )
+  );
 }

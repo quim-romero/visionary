@@ -3,11 +3,11 @@ import Home from "./pages/Home"
 import Gallery from "./pages/Gallery"
 import Favorites from "./pages/Favorites"
 import About from "./pages/About"
+import Contact from "./pages/Contact"
 
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"
-import Contact from "./pages/Contact"
 
 export default function App() {
   return (
