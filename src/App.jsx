@@ -4,6 +4,7 @@ import Gallery from "./pages/Gallery"
 import Favorites from "./pages/Favorites"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
+import CuratorView from "./pages/CuratorView"
 
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/favorites" element={<Favorites/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
+        <Route path="/curator" element={<CuratorView />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
       <Footer />
