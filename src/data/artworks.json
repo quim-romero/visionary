@@ -18,5 +18,105 @@
     "style": "Cyberpunk",
     "image": "/assets/artworks/echoes-neon.png",
     "description": "Night reflections in a simulated city, rendered with volumetric haze."
+  },
+  {
+    "id": "a03",
+    "title": "Lucid Bloom",
+    "artist": "Aria Kane",
+    "category": "Nature",
+    "type": "Image",
+    "style": "Surreal",
+    "image": "/assets/artworks/lucid-bloom.png",
+    "description": "Floral explosion born from machine-learned dreams."
+  },
+  {
+    "id": "a04",
+    "title": "City Signals",
+    "artist": "Kai Noma",
+    "category": "Urban",
+    "type": "Animation",
+    "style": "Noir",
+    "image": "/assets/artworks/city-signals.gif",
+    "description": "An abstract nightscape exploring the rhythm of artificial light across a digital skyline."
+  },
+  {
+    "id": "a05",
+    "title": "Void Runner",
+    "artist": "Nova Estrella",
+    "category": "Sci-Fi",
+    "type": "3D",
+    "style": "Geometric",
+    "image": "/assets/artworks/void-runner.png",
+    "description": "A hyperspace rider escaping simulated collapse."
+  },
+  {
+    "id": "a06",
+    "title": "Chromatic Memory",
+    "artist": "Ryan Wippler",
+    "category": "Abstract",
+    "type": "Animation",
+    "style": "Glitch",
+    "image": "/assets/artworks/chromatic-memory.gif",
+    "description": "A looping glitch of fading memories encoded in chromatic pulses."
+  },
+  {
+    "id": "a07",
+    "title": "Orbital Mirage",
+    "artist": "Lea Xu",
+    "category": "Sci-Fi",
+    "type": "Image",
+    "style": "Atmospheric",
+    "image": "/assets/artworks/orbital-mirage.png",
+    "description": "A surreal planetary reflection suspended above a synthetic ocean under shifting stars."
+  },
+  {
+    "id": "a08",
+    "title": "Signal Prophet",
+    "artist": "Milo Renz",
+    "category": "Conceptual",
+    "type": "Animation",
+    "style": "Experimental",
+    "image": "/assets/artworks/signal-prophet.gif",
+    "description": "An audio-reactive waveform visual translated into prophecy signals."
+  },
+  {
+    "id": "a09",
+    "title": "Recursive Muse",
+    "artist": "Emi Kiro",
+    "category": "Portrait",
+    "type": "Image",
+    "style": "Pop",
+    "image": "/assets/artworks/recursive-muse.png",
+    "description": "Pop-culture portraiture intersecting recursion, celebrity and AI synthesis."
+  },
+  {
+    "id": "a10",
+    "title": "Dream Collider",
+    "artist": "Lukas Moreau",
+    "category": "Sci-Fi",
+    "type": "3D",
+    "style": "Kinetic",
+    "image": "/assets/artworks/dream-collider.png",
+    "description": "Dynamic 3D collision of subconscious fragments inside a spatial construct."
+  },
+  {
+    "id": "a11",
+    "title": "Entropy Garden",
+    "artist": "Inara Vel",
+    "category": "Nature",
+    "type": "Animation",
+    "style": "Organic",
+    "image": "/assets/artworks/entropy-garden.gif",
+    "description": "A procedural animation of a garden evolving and decaying in harmony."
+  },
+  {
+    "id": "a12",
+    "title": "Neon Syntax",
+    "artist": "Theo Yara",
+    "category": "Urban",
+    "type": "Image",
+    "style": "Futuristic",
+    "image": "/assets/artworks/neon-syntax.png",
+    "description": "Urban signage turned into a visual code of synthetic communication."
   }
 ]
