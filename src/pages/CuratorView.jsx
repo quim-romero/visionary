@@ -1,16 +1,16 @@
-import { useEffect } from "react"
-import { Helmet } from "react-helmet"
-import { motion } from "framer-motion"
-import artworks from "../data/artworks.json"
-import useCuratorStore from "../context/useCuratorStore"
-import ArtEditPanel from "../components/ArtEditPanel"
+import { useEffect } from "react";
+import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
+import artworks from "../data/artworks.json";
+import useCuratorStore from "../context/useCuratorStore";
+import ArtEditPanel from "../components/ArtEditPanel";
 
 export default function CuratorView() {
-  const { curatorMode, toggleCuratorMode } = useCuratorStore()
+  const { curatorMode, toggleCuratorMode } = useCuratorStore();
 
   useEffect(() => {
-    if (!curatorMode) toggleCuratorMode()
-  }, [curatorMode, toggleCuratorMode])
+    if (!curatorMode) toggleCuratorMode();
+  }, [curatorMode, toggleCuratorMode]);
 
   return (
     <>
@@ -36,17 +36,31 @@ export default function CuratorView() {
           {artworks.map((art) => (
             <div
               key={art.id}
-              className="border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 bg-white dark:bg-neutral-900 shadow-sm"
+              className="relative bg-white dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow overflow-hidden p-4"
             >
-              <img src={art.image} alt={art.title} className="rounded w-full h-auto mb-4" />
+              <img
+                src={art.image}
+                alt={art.title}
+                className="rounded w-full h-auto mb-4"
+              />
               <h2 className="text-xl font-semibold mb-1">{art.title}</h2>
               <p className="text-sm text-neutral-500 mb-2">by {art.artist}</p>
-              <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-2">{art.description}</p>
+              <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                {art.description}
+              </p>
               <ul className="text-xs text-neutral-500 dark:text-neutral-400 space-y-1">
-                <li><strong>ID:</strong> {art.id}</li>
-                <li><strong>Category:</strong> {art.category}</li>
-                <li><strong>Type:</strong> {art.type}</li>
-                <li><strong>Style:</strong> {art.style}</li>
+                <li>
+                  <strong>ID:</strong> {art.id}
+                </li>
+                <li>
+                  <strong>Category:</strong> {art.category}
+                </li>
+                <li>
+                  <strong>Type:</strong> {art.type}
+                </li>
+                <li>
+                  <strong>Style:</strong> {art.style}
+                </li>
               </ul>
 
               <ArtEditPanel artwork={art} />
@@ -55,5 +69,5 @@ export default function CuratorView() {
         </div>
       </motion.main>
     </>
-  )
+  );
 }
