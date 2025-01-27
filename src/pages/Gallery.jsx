@@ -5,6 +5,8 @@ import GalleryCard from "../components/GalleryCard";
 import LightboxModal from "../components/LightboxModal";
 import FiltersBar from "../components/FiltersBar";
 
+import { motion } from "framer-motion";
+
 export default function Gallery() {
   const [data, setData] = useState([]);
   const [filtered, setFiltered] = useState([]);
@@ -19,7 +21,14 @@ export default function Gallery() {
   const handleClose = () => setSelected(null);
 
   return (
-    <main className="min-h-screen px-4 py-24 max-w-7xl mx-auto">
+    <motion.main
+      className="min-h-screen px-4 py-24 max-w-7xl mx-auto"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      aria-label="Art Gallery Section"
+    >
       <Helmet>
         <title>Gallery – Visionary Gallery</title>
       </Helmet>
@@ -33,6 +42,6 @@ export default function Gallery() {
         ))}
       </div>
       <LightboxModal artwork={selected} onClose={handleClose} />
-    </main>
+    </motion.main>
   );
 }
