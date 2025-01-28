@@ -1,26 +1,33 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home"
-import Gallery from "./pages/Gallery"
-import Favorites from "./pages/Favorites"
-import About from "./pages/About"
-import Contact from "./pages/Contact"
-import CuratorView from "./pages/CuratorView"
+import Home from "./pages/Home";
+import Gallery from "./pages/Gallery";
+import Favorites from "./pages/Favorites";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import CuratorView from "./pages/CuratorView";
 
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only absolute top-0 left-0 z-50 bg-black text-white p-2"
+      >
+        Skip to main content
+      </a>
+
       <Navbar />
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/gallery" element={<Gallery/>} />
-        <Route path="/favorites" element={<Favorites/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/curator" element={<CuratorView />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>

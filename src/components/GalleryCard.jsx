@@ -30,6 +30,7 @@ export default function GalleryCard({ artwork }) {
 
       <h2 className="text-lg font-semibold">{artwork.title}</h2>
       <p className="text-sm text-neutral-500">{artwork.artist}</p>
+      <p className="text-xs text-neutral-400">{artwork.category}</p>
     </motion.div>
   );
 }
