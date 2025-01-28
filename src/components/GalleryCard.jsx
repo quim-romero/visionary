@@ -7,7 +7,7 @@ export default function GalleryCard({ artwork }) {
   const fav = isFavorite(artwork.id);
 
   return (
-    <motion.div className="relative bg-white dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+    <motion.div data-cy="gallery-card" className="relative bg-white dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
       <button
         onClick={(e) => {
           e.stopPropagation();
