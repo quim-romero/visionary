@@ -34,7 +34,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full px-4 py-12 text-center">
+      <section className="w-full px-4 pb-24 text-center">
         <div className="max-w-5xl mx-auto">
           <FeaturedWorks />
         </div>
