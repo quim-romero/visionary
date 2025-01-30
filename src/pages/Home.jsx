@@ -12,10 +12,14 @@ export default function Home() {
       transition={{ duration: 0.5 }}
     >
       <Helmet>
-        <title>Home – Visionary Gallery</title>
+        <title>Visionary Gallery – Curated Digital Art</title>
         <meta
           name="description"
-          content="Discover curated digital artworks by visionary artists."
+          content="Browse curated digital artworks by visionary artists. Explore immersive art across categories and styles."
+        />
+        <meta
+          property="og:title"
+          content="Visionary Gallery – Curated Digital Art"
         />
       </Helmet>
 
