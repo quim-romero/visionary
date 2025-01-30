@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
-    { to: "/", label: "Home" },
     { to: "/gallery", label: "Gallery" },
     { to: "/favorites", label: "Favorites" },
     { to: "/about", label: "About" },
@@ -19,32 +19,45 @@ export default function Navbar() {
         aria-label="Main navigation"
         className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between"
       >
-        <div className="flex gap-6">
-          {links.map(({ to, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              className={({ isActive }) =>
-                `text-sm font-medium hover:underline transition-colors ${
-                  isActive
-                    ? "text-black dark:text-white"
-                    : "text-neutral-700 dark:text-neutral-300"
-                }`
-              }
-            >
-              {label}
-            </NavLink>
-          ))}
-        </div>
-        <button
-          aria-label="Toggle menu"
-          aria-controls="mobile-menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 rounded focus:outline-none focus:ring"
+        <NavLink
+          to="/"
+          className="text-lg md:text-xl font-display font-bold text-black dark:text-white"
         >
-          ☰
-        </button>
+          Visionary
+        </NavLink>
+
+        <div className="flex items-center gap-6">
+          <div className="hidden md:flex gap-6">
+            {links.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) =>
+                  `text-sm font-medium hover:underline transition-colors ${
+                    isActive
+                      ? "text-black dark:text-white"
+                      : "text-neutral-700 dark:text-neutral-300"
+                  }`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            <button
+              aria-label="Toggle menu"
+              aria-controls="mobile-menu"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((prev) => !prev)}
+              className="md:hidden p-2 rounded focus:outline-none focus:ring"
+            >
+              ☰
+            </button>
+          </div>
+        </div>
       </nav>
     </header>
   );

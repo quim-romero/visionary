@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "cypress:test": "cypress run",
-    "cypress:run": "start-server-and-test dev http://localhost:5173 cypress test"
+    "cypress:run": "start-server-and-test dev http://localhost:5173 cypress:test"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.10",
