@@ -1,34 +1,35 @@
-import { useState, useEffect } from "react"
-import { FiFilter } from "react-icons/fi"
-import { AnimatePresence, motion } from "framer-motion"
+import { useState, useEffect } from "react";
+import { FiFilter } from "react-icons/fi";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function FiltersBar({ artworks, onFilter }) {
-  const [categories, setCategories] = useState([])
-  const [active, setActive] = useState("All")
-  const [showMobileFilters, setShowMobileFilters] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [categories, setCategories] = useState([]);
+  const [active, setActive] = useState("All");
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const unique = [...new Set(artworks.map((item) => item.category))]
-    setCategories(["All", ...unique])
-  }, [artworks])
+    const unique = [...new Set(artworks.map((item) => item.category))];
+    setCategories(["All", ...unique]);
+  }, [artworks]);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleFilter = (category) => {
-    setActive(category)
-    const filtered = category === "All"
-      ? artworks
-      : artworks.filter((art) => art.category === category)
-    onFilter(filtered)
-    setShowMobileFilters(false)
-  }
+    setActive(category);
+    const filtered =
+      category === "All"
+        ? artworks
+        : artworks.filter((art) => art.category === category);
+    onFilter(filtered);
+    setShowMobileFilters(false);
+  };
 
   return (
     <div
@@ -59,10 +60,10 @@ export default function FiltersBar({ artworks, onFilter }) {
               <button
                 key={cat}
                 onClick={() => handleFilter(cat)}
-                className={`text-sm px-3 py-1.5 rounded-full border ${
+                className={`text-sm px-3 py-1.5 rounded-full border transition-colors ${
                   active === cat
-                    ? "bg-black text-white dark:bg-white dark:text-black"
-                    : "text-neutral-500 border-neutral-300 hover:bg-neutral-100"
+                    ? "bg-black text-white dark:bg-white dark:text-black border-black dark:border-white"
+                    : "text-neutral-500 border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800"
                 }`}
               >
                 {cat}
@@ -72,5 +73,5 @@ export default function FiltersBar({ artworks, onFilter }) {
         )}
       </AnimatePresence>
     </div>
-  )
+  );
 }
