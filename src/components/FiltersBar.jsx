@@ -6,11 +6,20 @@ export default function FiltersBar({ artworks, onFilter }) {
   const [categories, setCategories] = useState([])
   const [active, setActive] = useState("All")
   const [showMobileFilters, setShowMobileFilters] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const unique = [...new Set(artworks.map((item) => item.category))]
     setCategories(["All", ...unique])
   }, [artworks])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const handleFilter = (category) => {
     setActive(category)
@@ -22,7 +31,13 @@ export default function FiltersBar({ artworks, onFilter }) {
   }
 
   return (
-    <div className="sticky top-16 z-40 bg-white dark:bg-black border-b border-neutral-200 dark:border-neutral-800 py-4 mb-6">
+    <div
+      className={`sticky top-16 z-40 border-b border-neutral-200 dark:border-neutral-800 py-4 mb-6 transition-colors ${
+        scrolled
+          ? "bg-white/70 dark:bg-black/70 backdrop-blur"
+          : "bg-white dark:bg-black"
+      }`}
+    >
       <div className="md:hidden px-4 mb-3">
         <button
           onClick={() => setShowMobileFilters(!showMobileFilters)}
@@ -36,7 +51,9 @@ export default function FiltersBar({ artworks, onFilter }) {
         {(showMobileFilters || window.innerWidth >= 768) && (
           <motion.div
             className="flex flex-wrap items-center gap-3 px-4 max-w-7xl mx-auto"
-            initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
           >
             {categories.map((cat) => (
               <button
