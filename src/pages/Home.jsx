@@ -24,16 +24,17 @@ export default function Home() {
         />
       </Helmet>
 
-      <section className="flex flex-col justify-center items-center h-[60vh] px-4 text-center">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-display mb-4">
-            Discover Curated Digital Works
-          </h1>
-          <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400">
-            Explore featured pieces from our visionary artists.
-          </p>
-        </div>
-      </section>
+        <section className="h-screen flex items-center justify-center px-4 text-center">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl md:text-4xl font-display mb-4">
+              Curated Digital Works
+            </h2>
+            <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400">
+              Explore featured pieces from our visionary artists. Each work is
+              selected for its conceptual clarity and creative impact.
+            </p>
+          </div>
+        </section>
 
       <section className="w-full px-4 pb-24 text-center">
         <div className="max-w-5xl mx-auto">
