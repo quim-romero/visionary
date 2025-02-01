@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import FeaturedWorks from "../components/FeaturedWorks";
+import CallToAction from "../components/CallToAction.jsx";
 
 export default function Home() {
   return (
@@ -39,6 +40,8 @@ export default function Home() {
           <FeaturedWorks />
         </div>
       </section>
+
+      <CallToAction />
     </motion.main>
   );
 }

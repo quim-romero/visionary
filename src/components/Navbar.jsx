@@ -6,6 +6,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
+    { to: "/", label: "Home" },
     { to: "/gallery", label: "Gallery" },
     { to: "/favorites", label: "Favorites" },
     { to: "/about", label: "About" },
