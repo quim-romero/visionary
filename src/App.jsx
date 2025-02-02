@@ -1,4 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Favorites from "./pages/Favorites";
@@ -10,7 +12,16 @@ import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+const pageTransition = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -20 },
+  transition: { duration: 0.4, ease: "easeOut" },
+};
+
 export default function App() {
+  const location = useLocation();
+
   return (
     <>
       <a
@@ -22,15 +33,68 @@ export default function App() {
 
       <Navbar />
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/curator" element={<CuratorView />} />
-        <Route path="*" element={<h1>Not Found</h1>} />
-      </Routes>
+
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={
+              <motion.main id="main" {...pageTransition}>
+                <Home />
+              </motion.main>
+            }
+          />
+          <Route
+            path="/gallery"
+            element={
+              <motion.main id="main" {...pageTransition}>
+                <Gallery />
+              </motion.main>
+            }
+          />
+          <Route
+            path="/favorites"
+            element={
+              <motion.main id="main" {...pageTransition}>
+                <Favorites />
+              </motion.main>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <motion.main id="main" {...pageTransition}>
+                <About />
+              </motion.main>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <motion.main id="main" {...pageTransition}>
+                <Contact />
+              </motion.main>
+            }
+          />
+          <Route
+            path="/curator"
+            element={
+              <motion.main id="main" {...pageTransition}>
+                <CuratorView />
+              </motion.main>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <motion.main id="main" {...pageTransition}>
+                <h1 className="text-center text-3xl mt-40">Not Found</h1>
+              </motion.main>
+            }
+          />
+        </Routes>
+      </AnimatePresence>
+
       <Footer />
     </>
   );
