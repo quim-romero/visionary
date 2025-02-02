@@ -21,7 +21,7 @@ Meticulously designed for elegance and speed, it offers:
 
 ## 🚀 Live Preview
 
-👉 [https://visionary.quimromero.com/](https://visionary-gallery.quimromero.com/)
+👉 [https://visionary-gallery.quimromero.com/](https://visionary-gallery.quimromero.com/)
 
 ---
 
