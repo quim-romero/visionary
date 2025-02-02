@@ -1,4 +1,4 @@
-# Visionary Gallery — Curated Digital Art Platform · [🌐 Live Demo](https://visionary.quimromero.com/)
+# Visionary Gallery — Curated Digital Art Platform
 
 ![E2E Tests](https://github.com/quim-romero/visionary-gallery/actions/workflows/e2e.yml/badge.svg)
 
@@ -70,11 +70,12 @@ Visionary Gallery uses **Cypress** for reliable E2E testing, with each PR and pu
 Currently tested:
 - ✅ Gallery renders and displays all artworks
 - ✅ Filtering by category updates visible cards
+- ✅ Basic ARIA roles present in navigation
 
 Coming soon:
 - 🖱️ Modal interactions and favorites toggle
 - ⚙️ Theme toggle and layout persistence
-- 👤 Accessibility validations
+- ♿️ Full accessibility audits
 
 🧪 [View CI status →](https://github.com/quim-romero/visionary-gallery/actions)
 
