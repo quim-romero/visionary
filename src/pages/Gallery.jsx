@@ -34,13 +34,29 @@ export default function Gallery() {
       </Helmet>
       <h1 className="text-3xl font-display mb-8 text-center">Digital Works</h1>
       <FiltersBar artworks={data} onFilter={setFiltered} />
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {filtered.map((art) => (
-          <div key={art.id} onClick={() => handleOpen(art)}>
+          <div
+            key={art.id}
+            role="button"
+            tabIndex={0}
+            aria-haspopup="dialog"
+            aria-label={`Open details for ${art.title}`}
+            onClick={() => handleOpen(art)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
+                e.preventDefault();
+                handleOpen(art);
+              }
+            }}
+            className="cursor-pointer rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
             <GalleryCard artwork={art} />
           </div>
         ))}
       </div>
+
       <LightboxModal artwork={selected} onClose={handleClose} />
     </motion.main>
   );
