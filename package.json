@@ -11,7 +11,11 @@
     "preview": "vite preview",
     "cypress:test": "cypress run",
     "cypress:run": "start-server-and-test dev http://localhost:5173 cypress:test",
-    "test:a11y": "cypress run --spec cypress/e2e/a11y.cy.js"
+    "test:a11y": "cypress run --spec cypress/e2e/a11y.cy.js",
+    "test:smoke": "cypress run --spec cypress/e2e/smoke.cy.js",
+    "lh:collect": "lhci collect",
+    "lh:assert": "lhci assert",
+    "lh:ci": "lhci autorun"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.10",
