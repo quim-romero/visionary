@@ -1,3 +1,4 @@
+/* global Cypress, cy */
 import '@testing-library/cypress/add-commands'
 import "cypress-axe";
 
