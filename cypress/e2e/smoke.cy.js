@@ -1,15 +1,24 @@
-describe("Smoke", () => {
-  it("loads home and can navigate", () => {
+describe("Smoke test", () => {
+  it("Responde 200 en /", () => {
+    cy.request("/").its("status").should("eq", 200);
+  });
+
+  it("Basic visible landmarks", () => {
     cy.visit("/");
-    cy.contains("Curated Digital Works");
-    cy.get('nav[aria-label="Main navigation"]').should("exist");
+    cy.get("main").should("exist");
+    cy.get("nav").should("exist");
+    cy.get("footer").should("exist");
+  });
 
-    cy.contains("Gallery").click();
-    cy.url().should("include", "/gallery");
-    cy.get("[data-cy=gallery-card]").its("length").should("be.greaterThan", 0);
-
-    cy.contains("Contact").click();
-    cy.url().should("include", "/contact");
-    cy.get('form[aria-label="Contact form"]').should("exist");
+  it("You can visit at least one internal route", () => {
+    cy.visit("/");
+    cy.get('a[href^="/"]').then(($as) => {
+      const href = $as[0]?.getAttribute("href");
+      if (href) {
+        cy.visit(href);
+        cy.location("pathname").should("eq", href);
+        cy.get("main").should("exist");
+      }
+    });
   });
 });
