@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
@@ -11,13 +11,38 @@
     <meta name="theme-color" content="#ffffff" />
     <title>Visionary Gallery</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/fonts/Inter-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
+    <link
+      rel="preload"
+      href="/fonts/Inter-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/PlayfairDisplay-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link rel="preload" href="/assets/index-D_mrGGZ0.css" as="style" />
+    <link
+      rel="stylesheet"
+      href="/assets/index-D_mrGGZ0.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="/assets/index-D_mrGGZ0.css"
+    /></noscript>
   </head>
   <body class="antialiased">
     <div id="root"></div>

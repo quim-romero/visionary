@@ -6,7 +6,26 @@ html {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-600.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/PlayfairDisplay-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
 body {
   @apply bg-white text-neutral-900 dark:bg-black dark:text-neutral-100;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
