@@ -36,7 +36,7 @@
     "category": "Urban",
     "type": "Animation",
     "style": "Noir",
-    "image": "/assets/artworks/city-signals.webm",
+    "image": "/assets/artworks/city-signals.gif",
     "description": "An abstract nightscape exploring the rhythm of artificial light across a digital skyline."
   },
   {
@@ -56,7 +56,7 @@
     "category": "Abstract",
     "type": "Animation",
     "style": "Glitch",
-    "image": "/assets/artworks/chromatic-memory.webm",
+    "image": "/assets/artworks/chromatic-memory.gif",
     "description": "A looping glitch of fading memories encoded in chromatic pulses."
   },
   {
@@ -76,7 +76,7 @@
     "category": "Conceptual",
     "type": "Animation",
     "style": "Experimental",
-    "image": "/assets/artworks/signal-prophet.webm",
+    "image": "/assets/artworks/signal-prophet.gif",
     "description": "An audio-reactive waveform visual translated into prophecy signals."
   },
   {
@@ -106,7 +106,7 @@
     "category": "Nature",
     "type": "Animation",
     "style": "Organic",
-    "image": "/assets/artworks/entropy-garden.webm",
+    "image": "/assets/artworks/entropy-garden.gif",
     "description": "A procedural animation of a garden evolving and decaying in harmony."
   },
   {
