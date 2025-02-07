@@ -17,7 +17,7 @@ export default function LightboxModal({ artwork, onClose }) {
           'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
         );
         const list = Array.from(focusables || []);
-        if (list.length === 0) return;
+        if (!list.length) return;
         const first = list[0];
         const last = list[list.length - 1];
         if (e.shiftKey && document.activeElement === first) {
@@ -36,12 +36,15 @@ export default function LightboxModal({ artwork, onClose }) {
   }, [artwork, onClose]);
 
   useEffect(() => {
-    if (!artwork && openerRef.current) {
-      openerRef.current.focus();
-    }
+    if (!artwork && openerRef.current) openerRef.current.focus();
   }, [artwork]);
 
   if (!artwork) return null;
+
+  const isAnimation = artwork.type?.toLowerCase() === "animation";
+
+  const webm = artwork.image.replace(/\.gif$/i, ".webm");
+  const mp4 = artwork.image.replace(/\.gif$/i, ".mp4");
 
   return (
     <AnimatePresence>
@@ -68,15 +71,38 @@ export default function LightboxModal({ artwork, onClose }) {
           <button
             onClick={onClose}
             className="absolute top-4 right-4 text-neutral-500 hover:text-black dark:hover:text-white"
+            aria-label="Close dialog"
           >
             <FiX className="w-6 h-6" />
           </button>
+
           <div className="grid md:grid-cols-2 gap-6 p-6">
-            <img
-              src={artwork.image}
-              alt={artwork.title}
-              className="w-full h-auto rounded object-cover"
-            />
+            {isAnimation ? (
+              <video
+                className="w-full h-auto rounded object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                width="1200"
+                height="900"
+                controls
+              >
+                <source src={webm} type="video/webm" />
+                <source src={mp4} type="video/mp4" />
+              </video>
+            ) : (
+              <img
+                src={artwork.image}
+                alt={artwork.title}
+                className="w-full h-auto rounded object-cover"
+                decoding="async"
+                width="1200"
+                height="900"
+              />
+            )}
+
             <div className="flex flex-col justify-center">
               <h2 id="lightbox-title" className="text-2xl font-semibold mb-2">
                 {artwork.title}

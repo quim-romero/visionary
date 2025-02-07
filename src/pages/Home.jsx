@@ -5,13 +5,7 @@ import CallToAction from "../components/CallToAction.jsx";
 
 export default function Home() {
   return (
-    <motion.main
-      className="min-h-screen bg-white dark:bg-black"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <main className="min-h-screen bg-white dark:bg-black">
       <Helmet>
         <title>Visionary Gallery – Curated Digital Art</title>
         <meta
@@ -24,7 +18,7 @@ export default function Home() {
         />
       </Helmet>
 
-      <section className="h-screen flex items-center justify-center px-4 text-center">
+      <section className="min-h-[80vh] flex items-center justify-center px-4 text-center">
         <div className="max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-display mb-4">
             Curated Digital Works
@@ -36,9 +30,23 @@ export default function Home() {
         </div>
       </section>
 
-      <FeaturedWorks />
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <FeaturedWorks />
+      </motion.section>
 
-      <CallToAction />
-    </motion.main>
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.05 }}
+      >
+        <CallToAction />
+      </motion.section>
+    </main>
   );
 }
