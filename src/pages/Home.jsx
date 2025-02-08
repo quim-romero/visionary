@@ -18,7 +18,7 @@ export default function Home() {
         />
       </Helmet>
 
-      <section className="min-h-[80vh] flex items-center justify-center px-4 text-center">
+      <section className="min-h-[80vh] flex items-center justify-center px-4 text-center pt-32">
         <div className="max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-display mb-4">
             Curated Digital Works
@@ -31,6 +31,7 @@ export default function Home() {
       </section>
 
       <motion.section
+        className="mt-20 md:mt-32"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
