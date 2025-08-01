@@ -1,6 +1,6 @@
 # Visionary Gallery — Curated Digital Art Platform
 
-![E2E Tests](https://github.com/quim-romero/visionary-gallery/actions/workflows/e2e.yml/badge.svg)
+![E2E Tests](https://github.com/quim-romero/visionary/actions/workflows/e2e.yml/badge.svg)
 
 > _Conceptual clarity. Artistic focus. Digital presence with soul._
 
@@ -21,7 +21,7 @@ Meticulously designed for elegance and speed, it offers:
 
 ## 🚀 Live Preview
 
-👉 [https://visionary-gallery.quimromero.com/](https://visionary-gallery.quimromero.com/)
+👉 [https://visionary-gallery.quimromero.com/](https://visionary.quimromero.com/)
 
 ---
 
@@ -77,7 +77,7 @@ Coming soon:
 - ⚙️ Theme toggle and layout persistence
 - ♿️ Full accessibility audits
 
-🧪 [View CI status →](https://github.com/quim-romero/visionary-gallery/actions)
+🧪 [View CI status →](https://github.com/quim-romero/visionary/actions)
 
 ---
 
